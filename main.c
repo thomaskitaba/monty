@@ -17,18 +17,18 @@ content = NULL;
 read_line = 0;
 if (argc != 2)
 {
-    fprintf(stderr, "Usage: executable montyfilename");
+    fprintf(stderr, "Usage: executable montyfilename\n");
     exit(EXIT_FAILURE);
 }
 file = fopen(argv[1], "r");
 info.file = file;
 if (file == NULL)
 {
-    fprintf(stderr, "File can not be opend");
+    fprintf(stderr, "Error: File not found or corrupt:\n");
     exit(EXIT_FAILURE);
 }
 /* start reading lines from monty file*/
 read_line = getline(&content, &len, file);
-printf("size of \tlen = %lu\tread: %ld", len, read_line);
+printf("size of \tlen = %lu\tread: %ld\n", len, read_line);
 return (0);
 }
