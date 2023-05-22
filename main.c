@@ -44,9 +44,10 @@ while (read_line != -1)
     l_count++;
     info.content = content;
     if (read_line > 0)
-        execute(content, stack, l_count, file);
+        execute(content, &stack, l_count, file);
     /*printf("size of \tlen = %lu\tread: %ld\n", len, read_line);*/
 }
-
+free(content);
+fclose(file);
 return (0);
 }

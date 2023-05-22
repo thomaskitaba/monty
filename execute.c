@@ -7,7 +7,9 @@
  * @fp:
  *
  */
-void execute(char *content, stack_t *stack, unsigned int counter, FILE *fp)
+void execute(char *content, stack_t **stack, unsigned int counter, FILE *fp)
 {
     printf("line %d  :- %s", counter, content);
+    printf("\n info struct information: \n");
+    printf("content: %s\n", info.content);
 }

@@ -29,6 +29,7 @@ typedef struct info_s{
 	FILE *file;
 	int ll_type;
 }info_t;
+extern info_t info;
 
 
 typedef struct opcode{
@@ -39,5 +40,5 @@ typedef struct opcode{
  *
  *
  */
-void execute(char *content, stack_t *stack, unsigned int counter, FILE *fp);
+void execute(char *content, stack_t **stack, unsigned int counter, FILE *fp);
 #endif
