@@ -39,5 +39,5 @@ typedef struct opcode{
  *
  *
  */
-
+void execute(char *content, stack_t *stack, unsigned int counter, FILE *fp);
 #endif
