@@ -29,7 +29,7 @@ typedef struct info_s{
 	FILE *file;
 	int ll_type;
 }info_t;
-extern info_t info;
+
 
 typedef struct opcode{
 	char *op;

@@ -1,5 +1,5 @@
 #include "monty.h"
-info = {NULL, NULL, NULL, 0};
+info_t info = {NULL, NULL, NULL, 0};
 /**
  * main - entry point of the program
  * @arc: count of arguments provided by user
