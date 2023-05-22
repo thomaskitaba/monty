@@ -48,7 +48,5 @@ while (read_line != -1)
     /*printf("size of \tlen = %lu\tread: %ld\n", len, read_line);*/
 }
 
-
-
 return (0);
 }
