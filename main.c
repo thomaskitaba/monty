@@ -38,7 +38,7 @@ while (read_line != -1)
     read_line = getline(&content, &len, file);
     if (ferror(file))
     {
-        fprintf(stderr, "Error: error while reading file");
+        fprintf(stderr, "Error: error while reading file\n");
         exit(EXIT_FAILURE);
     }
     l_count++;
