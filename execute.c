@@ -34,11 +34,12 @@ void execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	/*check  if argument is number*/
 	if (info.arg)
 	{
-		for (i = 0; i < strlen(info.arg); i++)
+		if (strcmp(info.arg[j], "-") == 0)
+			i++;
+		for (; i < strlen(info.arg); i++)
 		{
 			if (info.arg[i] < 48 || info.arg[i] > 57)
 			{
-
 				fprintf(stderr, "L<%d>: usage: push integer\n", counter);
 				free(content);
 				fclose(file);
