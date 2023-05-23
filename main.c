@@ -22,14 +22,14 @@ l_count = 0;
 
 if (argc != 2)
 {
-    fprintf(stderr, "Usage: executable montyfilename\n");
+    fprintf(stderr, "USAGE: monty file\n");
     exit(EXIT_FAILURE);
 }
 file = fopen(argv[1], "r");
 info.file = file;
 if (file == NULL)
 {
-    fprintf(stderr, "Error: File not found:\n");
+    fprintf(stderr, "Error: Can't open file <%s>\n", argv[1]);
     exit(EXIT_FAILURE);
 }
 /* start reading lines from monty file*/

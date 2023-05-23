@@ -57,7 +57,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	}
 	if (op && opcode[j].op == NULL)
 	{
-		fprintf(stderr, "L[%u]\n command not found", counter);
+		fprintf(stderr, "L<%u>: unknown instruction <%s>\n", counter, op);
 		free(content);
 		free_stack(*stack);
 		fclose(file);
