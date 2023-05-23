@@ -24,48 +24,46 @@ void execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	op = strtok(content, " \n\t");
 	if (strcmp(op, "#") == 0)
 	{
-		 exit(0);
+		/*TODO:*/
+
+		return;
 	}
-	arg = strtok(NULL, " \n\t");
-	/*check arg*/
-	if (!arg)
-	{
-		flag = 1;
-	}
+	info.arg  = strtok(NULL, " \n\t");
+
 	/*check  if argument is number*/
-	for (i = 0; i < strlen(arg); i++)
+	if (info.arg)
 	{
-		if (arg[i] < 48 || arg[i] > 57)
+		for (i = 0; i < strlen(info.arg); i++)
 		{
-			flag = 1;
-			break;
+			if (info.arg[i] < 48 || info.arg[i] > 57)
+			{
+				fprintf(stderr, "L<%d>: usage: push integer\n", counter);
+				free(content);
+				free(stack);
+				fclose(file);
+				exit(EXIT_FAILURE);
+				break;
+			}
 		}
 	}
-	if (flag == 1)
-	{
-		fprintf(stderr, "L<%d>: usage: push integer", counter);
-		free(content);
-		free(stack);
-		fclose(file);
-		exit(EXIT_FAILURE);
-	}
-	info.arg = arg;
+	else
+		info.arg = NULL;
+
 	/* find the appropriate operation code*/
 	while (opcode[j].op != NULL && op)
 	{
 		if (strcmp(op, opcode[j].op) == 0)
 		{
-			printf("TEST PRINT");
 			opcode[j].func(stack, counter);
 		}
 		j++;
 	}
 	if (op && opcode[j].op == NULL)
 	{
-		fprintf(stderr, "Error: invalid opcode entered\n");
-
-
+		fprintf(stderr, "opecode not present"); /*TODO:*/
+		free(content);
+		free(stack);
+		fclose(file);
 	}
-
-	printf("line %d  :- %s", counter, content);
+	printf("line %d  :- %s\n", counter, content);
 }

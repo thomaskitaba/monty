@@ -37,9 +37,9 @@ void execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 			if (info.arg[i] < 48 || info.arg[i] > 57)
 			{
 				fprintf(stderr, "L<%d>: usage: push integer\n", counter);
-				// free(content);
-				// free(stack);
-				// fclose(file);
+				free(content);
+				free(stack);
+				fclose(file);
 				exit(EXIT_FAILURE);
 				break;
 			}
@@ -57,7 +57,6 @@ void execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		}
 		j++;
 	}
-
 
 	printf("line %d  :- %s\n", counter, content);
 }
