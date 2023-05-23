@@ -20,10 +20,10 @@ void sq_pop(stack_t **stack, unsigned int counter)
     }
     if (info.ord_type == 0)
     {
-        pop_start(stack, counter);
+        /*pop_start(stack, counter);*/
+        printf("ord_type = 0: meaning stack");
     }
     else
-        pop_end(stack, counter);
-
-
+        /*pop_end(stack, counter);*/
+        printf("ord_type = 1: meaning queue");
 }
