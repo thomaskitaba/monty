@@ -26,23 +26,46 @@ void execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	{
 		 exit(0);
 	}
-	info.arg  = strtok(NULL, " \n\t");
-
+	arg = strtok(NULL, " \n\t");
+	/*check arg*/
+	if (!arg)
+	{
+		flag = 1;
+	}
 	/*check  if argument is number*/
-
-
-
+	for (i = 0; i < strlen(arg); i++)
+	{
+		if (arg[i] < 48 || arg[i] > 57)
+		{
+			flag = 1;
+			break;
+		}
+	}
+	if (flag == 1)
+	{
+		fprintf(stderr, "L<%d>: usage: push integer", counter);
+		free(content);
+		free(stack);
+		fclose(file);
+		exit(EXIT_FAILURE);
+	}
+	info.arg = arg;
 	/* find the appropriate operation code*/
 	while (opcode[j].op != NULL && op)
 	{
 		if (strcmp(op, opcode[j].op) == 0)
 		{
-
+			printf("TEST PRINT");
 			opcode[j].func(stack, counter);
 		}
 		j++;
 	}
+	if (op && opcode[j].op == NULL)
+	{
+		fprintf(stderr, "Error: invalid opcode entered\n");
 
 
-	printf("line %d  :- %s\n", counter, content);
+	}
+
+	printf("line %d  :- %s", counter, content);
 }
