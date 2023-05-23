@@ -8,4 +8,5 @@
 void sq_pint(stack_t **stack, unsigned int counter)
 {
     printf("sq_pint funciton goes here\n");
+
 }

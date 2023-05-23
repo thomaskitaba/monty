@@ -19,7 +19,18 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 					{"pint", sq_pint},
 					{"pop", sq_pop},
 					{"swap", sq_swap},
-					{"add", sq_add}};
+					{"add", sq_add},
+                    {"nop", sq_nop},
+					{"sub", sq_sub},
+					{"div", sq_div},
+					{"mul", sq_mul},
+					{"mod", sq_mod},
+                    {"pchar", sq_pchar},
+					{"pstr", sq_pstr},
+					{"rotl", sq_rotr},
+					{"rotr", sq_swap},
+                    {"stack", sq_rotr},
+					{"queue", sq_swap}};
 	/*tokenize content using strtok*/
 	op = strtok(content, " \n\t");
 	if (op && op[0] == '#')
@@ -34,7 +45,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		{
 			if (info.arg[i] < 48 || info.arg[i] > 57)
 			{
-				fprintf(stderr, "L<%d>: usage: push integer\n", counter);
+				fprintf(stderr, "L<%u>: usage: push integer\n", counter);
 				free(content);
 				free_stack(*stack);
 				fclose(file);
@@ -63,6 +74,6 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		fclose(file);
 		exit(EXIT_FAILURE);
 	}
-	printf("line %d  :- %s\n", counter, content);
+	printf("line %u  :- %s\n", counter, content);
 	return (1);
 }

@@ -48,8 +48,22 @@ void sq_pint(stack_t **stack, unsigned int counter);
 void sq_pop(stack_t **stack, unsigned int counter);
 void sq_swap(stack_t **stack, unsigned int counter);
 void sq_add(stack_t **stack, unsigned int counter);
-void free_stack(stack_t *stack);
+void sq_nop(stack_t **stack, unsigned int counter);
+void sq_sub(stack_t **stack, unsigned int counter);
+void sq_div(stack_t **stack, unsigned int counter);
+void sq_mul(stack_t **stack, unsigned int counter);
+void sq_mod(stack_t **stack, unsigned int counter);
+void sq_pchar(stack_t **stack, unsigned int counter);
+void sq_pstr(stack_t **stack, unsigned int counter);
+void sq_rotl(stack_t **stack, unsigned int counter);
+void sq_rotr(stack_t **stack, unsigned int counter);
+void sq_stack(stack_t **stack, unsigned int counter);
+void sq_queue(stack_t **stack, unsigned int counter);
 
-stack_t *add_stack_start(stack_t **head, int n);
-stack_t *add_stack_end(stack_t **head, int n);
+
+void free_stack(stack_t *stack);
+stack_t *add_start(stack_t **head, int n);
+stack_t *add_end(stack_t **head, int n);
+stack_t *pop_end(stack_t **stack, unsigned int counter);
+stack_t *pop_start(stack_t **stack, unsigned int counter);
 #endif
