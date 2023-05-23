@@ -22,7 +22,7 @@ void sq_pall(stack_t **stack, unsigned int counter)
     }
     else
     {
-        fprintf(stderr, "L<%u>: can't pint, stack empty", counter);
+        fprintf(stderr, "L<%u>: can't pint, stack empty\n", counter);
         exit(EXIT_FAILURE);
     }
 }
