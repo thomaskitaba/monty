@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
+#include <string.h>
 
 /**
  * stack_s - double linked list
@@ -40,7 +41,7 @@ typedef struct opcode{
  *
  *
  */
-void execute(char *content, stack_t **stack, unsigned int counter, FILE *fp);
+void execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
 void sq_push(stack_t **stack, unsigned int counter);
 void sq_pall(stack_t **stack, unsigned int counter);
 void sq_pint(stack_t **stack, unsigned int counter);
