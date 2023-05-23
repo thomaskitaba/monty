@@ -11,6 +11,5 @@ stack_t *pop_start(stack_t **head, unsigned int n)
 	current = current->next;
 	current->prev = NULL;
 	*head = current;
-
 	return (*head);
 }
