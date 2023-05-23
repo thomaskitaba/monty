@@ -26,7 +26,6 @@ void execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	{
 		/*TODO:*/
 		free(content);
-		free(stack);
 		fclose(file);
 		exit(0);
 	}
@@ -41,10 +40,8 @@ void execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 			{
 				fprintf(stderr, "L<%d>: usage: push integer\n", counter);
 				free(content);
-				free(stack);
 				fclose(file);
 				exit(EXIT_FAILURE);
-
 			}
 		}
 	}
