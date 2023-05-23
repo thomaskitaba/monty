@@ -28,7 +28,7 @@ typedef struct info_s{
 	char *content;
 	char *arg;
 	FILE *file;
-	int ll_type;
+	int ord_type;
 }info_t;
 extern info_t info;
 
@@ -50,4 +50,6 @@ void sq_swap(stack_t **stack, unsigned int counter);
 void sq_add(stack_t **stack, unsigned int counter);
 void free_stack(stack_t *stack);
 
+stack_t *add_stack_start(stack_t **head, int n);
+stack_t *add_stack_end(stack_t **head, int n);
 #endif
