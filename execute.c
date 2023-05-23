@@ -25,6 +25,9 @@ void execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	if (strcmp(op, "#") == 0)
 	{
 		/*TODO:*/
+		free(content);
+		free(stack);
+		fclose(file);
 		exit(0);
 	}
 	info.arg  = strtok(NULL, " \n\t");
@@ -41,7 +44,7 @@ void execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 				free(stack);
 				fclose(file);
 				exit(EXIT_FAILURE);
-				break;
+
 			}
 		}
 	}
