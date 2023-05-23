@@ -49,7 +49,7 @@ while (read_line != -1)
     /*printf("size of \tlen = %lu\tread: %ld\n", len, read_line);*/
     free(content);
 }
-
+free_stack(stack);
 fclose(file);
 return (0);
 }

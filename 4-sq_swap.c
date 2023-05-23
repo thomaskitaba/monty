@@ -7,5 +7,5 @@
 */
 void sq_swap(stack_t **stack, unsigned int counter)
 {
-    printf("sq_swap funciton goes here");
+    printf("sq_swap funciton goes here\n");
 }

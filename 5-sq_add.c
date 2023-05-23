@@ -7,5 +7,5 @@
 */
 void sq_add(stack_t **stack, unsigned int counter)
 {
-    printf("sq_add funciton goes here");
+    printf("sq_add funciton goes here\n");
 }
