@@ -36,6 +36,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 			{
 				fprintf(stderr, "L<%d>: usage: push integer\n", counter);
 				free(content);
+				free_stack(*stack);
 				fclose(file);
 				exit(EXIT_FAILURE);
 			}
@@ -58,6 +59,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	{
 		fprintf(stderr, "L[%u]\n command not found", counter);
 		free(content);
+		free_stack(*stack);
 		fclose(file);
 		exit(EXIT_FAILURE);
 	}

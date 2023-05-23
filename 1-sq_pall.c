@@ -7,5 +7,5 @@
 */
 void sq_pall(stack_t **stack, unsigned int counter)
 {
-    printf("sq_pall funciton goes here");
+    printf("sq_pall funciton goes here\n");
 }

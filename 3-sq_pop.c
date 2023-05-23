@@ -7,5 +7,5 @@
 */
 void sq_pop(stack_t **stack, unsigned int counter)
 {
-    printf("sq_pop funciton goes here");
+    printf("sq_pop funciton goes here\n");
 }
