@@ -24,20 +24,35 @@ void execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	op = strtok(content, " \n\t");
 	if (strcmp(op, "#") == 0)
 	{
-		 exit(0);
+		/*TODO:*/
+		exit(0);
 	}
 	info.arg  = strtok(NULL, " \n\t");
 
 	/*check  if argument is number*/
-
-
+	if (info.arg)
+	{
+		for (i = 0; i < strlen(info.arg); i++)
+		{
+			if (info.arg[i] < 48 || info.arg[i] > 57)
+			{
+				fprintf(stderr, "L<%d>: usage: push integer\n", counter);
+				// free(content);
+				// free(stack);
+				// fclose(file);
+				exit(EXIT_FAILURE);
+				break;
+			}
+		}
+	}
+	else
+		info.arg = NULL;
 
 	/* find the appropriate operation code*/
 	while (opcode[j].op != NULL && op)
 	{
 		if (strcmp(op, opcode[j].op) == 0)
 		{
-
 			opcode[j].func(stack, counter);
 		}
 		j++;
