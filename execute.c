@@ -9,7 +9,11 @@
  */
 void execute(char *content, stack_t **stack, unsigned int counter, FILE *fp)
 {
-    printf("line %d  :- %s", counter, content);
-    printf("\n info struct information: \n");
-    printf("content: %s\n", info.content);
+	op_optn opcodes[] = {{"push", sq_push},
+					{"pall", sq_pall},
+					{"pint", sq_pint},
+					{"pop", sq_pop},
+					{"swap", sq_swap},
+					{"add", sq_add}};
+	printf("line %d  :- %s", counter, content);
 }
