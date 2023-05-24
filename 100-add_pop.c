@@ -21,7 +21,8 @@ if (list == NULL)
 	exit(EXIT_FAILURE);
 }
 
-free(list);
+stack = list;
+free(stack);
 return (0);
 }
 /**
