@@ -30,7 +30,8 @@ int execute(char *content, stack_t **head, unsigned int counter, FILE *file)
 					{"rotl", sq_rotr},
 					{"rotr", sq_swap},
                     {"stack", sq_rotr},
-					{"queue", sq_swap}};
+					{"queue", sq_swap},
+                    {NULL, NULL}};
 	/*tokenize content using strtok*/
 	op = strtok(content, " \n\t");
 	if (op && op[0] == '#')
