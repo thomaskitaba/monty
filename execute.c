@@ -12,8 +12,6 @@ int execute(char *content, stack_t **head, unsigned int counter, FILE *file)
 	char *op, *arg;
 	unsigned int j, flag;
 
-	op = arg = NULL;
-	j = flag = 0;
 	op_optn opcode[] = {{"push", sq_push},
 					{"pall", sq_pall},
 					{"pint", sq_pint},
@@ -32,6 +30,8 @@ int execute(char *content, stack_t **head, unsigned int counter, FILE *file)
                     {"stack", sq_rotr},
 					{"queue", sq_swap},
                     {NULL, NULL}};
+    op = arg = NULL;
+	j = flag = 0;
 	/*tokenize content using strtok*/
 	op = strtok(content, " \n\t");
 	if (op && op[0] == '#')
