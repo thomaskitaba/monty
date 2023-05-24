@@ -1,7 +1,1 @@
 push 21
-push -1
-push 1
-push -221
-pall
-pop
-pint 6
