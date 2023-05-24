@@ -1,9 +1,9 @@
 #include "monty.h"
 /**
- * f_add - adds the top two elements of the stack.
- * @head: stack head
- * @counter: line_number
- * Return: no return
+ * f_add - pointer to function that adds two elements
+ * @head: pointer to head of stack
+ * @counter: line_number of command on monty file
+ * Return: nothing
 */
 void f_add(stack_t **head, unsigned int counter)
 {

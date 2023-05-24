@@ -53,12 +53,11 @@ typedef struct bus_s
 }  bus_t;
 extern bus_t bus;
 /**
- * struct instruction_s - opcode and its function
- * @opcode: the opcode
- * @f: function to handle the opcode
+ * structures - functions for monty opcode
+ * @opcode: operation code
+ * @f: pointer to a function that handles an opcode
  *
- * Description: opcode and its function
- * for stack, queues, LIFO, FIFO Holberton project
+ * Description: funcions for each monty opcode
  */
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
@@ -84,4 +83,5 @@ void f_mod(stack_t **head, unsigned int counter);
 void f_pchar(stack_t **head, unsigned int counter);
 void f_pstr(stack_t **head, unsigned int counter);
 void f_rotl(stack_t **head, unsigned int counter);
+
 #endif

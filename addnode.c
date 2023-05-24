@@ -1,9 +1,9 @@
 #include "monty.h"
 /**
- * addnode - add node to the head stack
- * @head: head of the stack
- * @n: new_value
- * Return: no return
+ * addnode - function that adds to stack
+ * @head: pointer to head of stack
+ * @counter: line_number of command on monty file
+ * Return: nothing
 */
 void addnode(stack_t **head, int n)
 {

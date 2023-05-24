@@ -1,9 +1,9 @@
 #include "monty.h"
 /**
-  *f_sub- sustration
-  *@head: stack head
-  *@counter: line_number
-  *Return: no return
+  *f_sub- function that that substiturs 2 element of a stack
+ * @head: pointer to head of stack
+ * @counter: line_number of command on monty file
+ * Return: nothing
  */
 void f_sub(stack_t **head, unsigned int counter)
 {

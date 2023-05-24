@@ -3,9 +3,9 @@ bus_t bus = {NULL, NULL, NULL, 0};
 
 /**
 * main - monty code interpreter
-* @argc: number of arguments
-* @argv: monty file location
-* Return: 0 on success
+* @argc: argument count
+* @argv: argument vector
+* Return: 0 on success, other value on failur
 */
 int main(int argc, char *argv[])
 {

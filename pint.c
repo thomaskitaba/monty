@@ -1,9 +1,9 @@
 #include "monty.h"
 /**
- * f_pint - prints the top
- * @head: stack head
- * @counter: line_number
- * Return: no return
+ * f_pint - function that prints the top element of a stack
+ * @head: pointer to head of stack
+ * @counter: line_number of command on monty file
+ * Return: nothing
 */
 void f_pint(stack_t **head, unsigned int counter)
 {
