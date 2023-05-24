@@ -15,7 +15,7 @@ list = (stack_t *)malloc(sizeof(stack_t));
 if (list == NULL)
 {
 	fprintf(stderr, "Error: malloc failed\n");
-	fclose(file);
+	fclose(info.file);
 	free(info.content);
 	free_stack(*head);
 	exit(EXIT_FAILURE);
@@ -46,7 +46,7 @@ list = (stack_t *)malloc(sizeof(stack_t));
 if (list == NULL)
 {
 	fprintf(stderr, "Error: malloc failed\n");
-	fclose(file);
+	fclose(info.file);
 	free(info.content);
 	free_stack(*head);
 	exit(EXIT_FAILURE);
