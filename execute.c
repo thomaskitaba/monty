@@ -10,10 +10,10 @@
 int execute(char *content, stack_t **head, unsigned int counter, FILE *file)
 {
 	char *op, *arg;
-	unsigned int i, j, flag;
+	unsigned int j, flag;
 
 	op = arg = NULL;
-	i = j = flag = 0;
+	j = flag = 0;
 	op_optn opcode[] = {{"push", sq_push},
 					{"pall", sq_pall},
 					{"pint", sq_pint},
