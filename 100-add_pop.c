@@ -21,8 +21,8 @@ if (list == NULL)
 	exit(EXIT_FAILURE);
 }
 
-
-return (*head);
+free(*head);
+return (0);
 }
 /**
 * add_end - add node at the end of d_list
