@@ -82,7 +82,7 @@ while (Next)
 * @n: number to be inserted to the list
 * Return: head of the node, or Null
 */
-stack_t *pop_start(stack_t **head, unsigned int n)
+void *pop_start(stack_t **head, unsigned int n)
 {
 	return (*head);
 }
@@ -92,7 +92,7 @@ stack_t *pop_start(stack_t **head, unsigned int n)
 * @n: number to be inserted
 * Return: inserted node address, or NUll
 */
-stack_t *pop_end(stack_t **head, unsigned int n)
+void *pop_end(stack_t **head, unsigned int n)
 {
 	return (*head);
 }
