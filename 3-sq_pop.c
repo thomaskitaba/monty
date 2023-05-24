@@ -12,7 +12,7 @@ void sq_pop(stack_t **stack, unsigned int counter)
 
     if (*stack == NULL || stack == NULL)
     {
-        fprintf(stderr, "L<%u>: can't pop an empty stack", counter);
+        fprintf(stderr, "L<%u>: can't pop an empty stack\n", counter);
         fclose(info.file);
         free(info.content);
         free_stack(*stack);
