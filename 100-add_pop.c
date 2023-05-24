@@ -17,7 +17,7 @@ stack_t *add_start(stack_t **head, int n)
 * @n: number to be inserted
 * Return: inserted node address, or NUll
 */
-stack_t *add_start(stack_t **head, int n)
+stack_t *add_end(stack_t **head, int n)
 {
 
 	return (*head);
