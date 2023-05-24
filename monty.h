@@ -27,15 +27,15 @@ typedef struct stack_s
 
 /**
  * struct instruction_t - contains insturnctions
- * @stack: value
- * @counter: pointer to monty file
+ * @opcode: operation code
+ * @f: function pointer to monty opcodes
  * Description: holds opcode name and its related funtion
  */
-typedef struct instruction_t{
-
-		char *opcode;
-        void (*f)(stack_t **stack, unsigned int counter);
-}instruction_t;
+typedef struct instruction_t
+{
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int counter);
+} instruction_t;
 /**
  * struct bus_s - variables -args, file, line contentfd
  * @arg: value
@@ -59,9 +59,6 @@ extern bus_t bus;
  *
  * Description: funcions for each monty opcode
  */
-char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
-ssize_t getstdin(char **lineptr, int file);
-char  *clean_line(char *content);
 void f_push(stack_t **head, unsigned int number);
 void f_pall(stack_t **head, unsigned int number);
 void f_pint(stack_t **head, unsigned int number);
