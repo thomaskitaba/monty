@@ -22,7 +22,7 @@ if (list == NULL)
 }
 
 stack = list;
-free(stack);
+free_stack(stack);
 return (0);
 }
 /**
