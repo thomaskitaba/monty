@@ -17,7 +17,7 @@ if (list == NULL)
 	fprintf(stderr, "Error: malloc failed\n");
 	fclose(file);
 	free(info.content);
-	free_stack(*stack);
+	free_stack(*head);
 	exit(EXIT_FAILURE);
 }
 	list->n = n;
@@ -48,7 +48,7 @@ if (list == NULL)
 	fprintf(stderr, "Error: malloc failed\n");
 	fclose(file);
 	free(info.content);
-	free_stack(*stack);
+	free_stack(*head);
 	exit(EXIT_FAILURE);
 }
 list->n = n;
