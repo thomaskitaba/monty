@@ -5,7 +5,7 @@
 * @counter: line number of the code
 * Return: nothing
 */
-void sq_pop(stack_t **head, unsigned int counter)
+void sq_pop(stack_t **head, __attribute__((unused)) unsigned int counter)
 {
     stack_t *current;
     current = *head;

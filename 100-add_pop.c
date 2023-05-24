@@ -5,7 +5,7 @@
 * @n: number to be inserted
 * Return: inserted node address, or NUll
 */
-void *add_start(stack_t **head, int n)
+void add_start(stack_t **head, int n)
 {
 stack_t *list;
 list = NULL;
@@ -77,7 +77,7 @@ while (Next)
 * @n: number to be inserted to the list
 * Return: head of the node, or Null
 */
-void *pop_start(stack_t **head)
+void pop_start(stack_t **head)
 {
 	stack_t *current;
 	current = *head;
@@ -91,7 +91,7 @@ void *pop_start(stack_t **head)
 * @n: number to be inserted
 * Return: inserted node address, or NUll
 */
-void *pop_end(stack_t **head)
+void pop_end(stack_t **head)
 {
 	return (*head);
 }

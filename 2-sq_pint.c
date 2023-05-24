@@ -5,7 +5,7 @@
 * @counter: line number of the code
 * Return: nothing
 */
-void sq_pint(stack_t **stack, unsigned int counter)
+void sq_pint(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int counter)
 {
     printf("sq_pint funciton goes here\n");
 
