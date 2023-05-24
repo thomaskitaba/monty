@@ -4,15 +4,14 @@
  * @head: head of node
  * Return: node
  */
-void free_stack(stack_t *head)
+void free_stack(stack_t *stack)
 {
-    stack_t *aux;
-
-	aux = head;
-	while (head)
+	stack_t *temp, *Next;
+	temp = stack;
+	while (temp)
 	{
-		aux = head->next;
-		free(head);
-		head = aux;
+		Next = temp->next;
+		free(temp);
+		temp = Next;
 	}
 }
