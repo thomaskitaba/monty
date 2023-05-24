@@ -9,6 +9,9 @@ void sq_push(stack_t **head, unsigned int counter)
 {
     stack_t *current;
     current = *head;
+    int i;
+
+    i = 0;
     if (head == NULL)
     {
         fprintf(stderr, "Invaled argument passed");
@@ -26,9 +29,9 @@ void sq_push(stack_t **head, unsigned int counter)
 			if (info.arg[i] < 48 || info.arg[i] > 57)
 			{
 				fprintf(stderr, "L<%u>: usage: push integer\n", counter);
-				free(content);
+				free(info.content);
 				free_stack(*head);
-				fclose(file);
+				fclose(info.file);
 				exit(EXIT_FAILURE);
 			}
 		}
