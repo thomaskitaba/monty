@@ -1,6 +1,6 @@
 #include "monty.h"
 bus_t bus = {NULL, NULL, NULL, 0};
-stack_t *stack = NULL;
+
 /**
 * main - monty code interpreter
 * @argc: number of arguments
@@ -9,11 +9,13 @@ stack_t *stack = NULL;
 */
 int main(int argc, char *argv[])
 {
+    stack_t *stack;
 	char *content;
 	FILE *file;
 	size_t size = 0;
 	ssize_t read_line = 1;
 	unsigned int counter = 0;
+     stack = NULL;
 
 	if (argc != 2)
 	{
