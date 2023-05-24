@@ -36,6 +36,7 @@ return (*head);
 * @n: number to be inserted
 * Return: inserted node address, or NUll
 */
+/*
 stack_t *add_end(stack_t **head, int n)
 {
 stack_t *current, *Next, *list;
@@ -52,7 +53,6 @@ if (list == NULL)
 	exit(EXIT_FAILURE);
 }
 list->n = n;
-/*handle empty head*/
 if (*head == NULL)
 {
 	list->prev = NULL;
@@ -60,7 +60,6 @@ if (*head == NULL)
 	*head = list;
 	return (*head);
 }
-/*go to the end of the node*/
 while (Next)
 {
 	current = Next;
@@ -71,6 +70,7 @@ while (Next)
 	list->next = NULL;
 	return (*head);
 }
+*/
 
 /**
 * pop_start - delete the top node at the begning
