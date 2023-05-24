@@ -30,7 +30,7 @@ void sq_push(stack_t **head, unsigned int counter)
 		free_stack(*head);
 		exit(EXIT_FAILURE); }
 	n = atoi(info.arg);
-	if (info.or_type == 0)
+	if (info.ord_type == 0)
 		add_start(head, n);
 	else
 		add_start(head, n);
