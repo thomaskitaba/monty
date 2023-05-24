@@ -9,7 +9,7 @@ stack_t *add_start(stack_t **head, int n)
 {
 stack_t *list;
 list = NULL;
-
+stack = head;
 list = (stack_t *)malloc(sizeof(stack_t));
 
 if (list == NULL)
@@ -22,10 +22,7 @@ if (list == NULL)
 }
 
 stack = list;
-fclose(info.file);
-free(info.content);
-free_stack(stack);
-exit(0);
+
 return (0);
 }
 /**
