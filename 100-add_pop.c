@@ -5,7 +5,7 @@
 * @n: number to be inserted
 * Return: inserted node address, or NUll
 */
-stack_t *add_start(stack_t **head, int n)
+void *add_start(stack_t **head, int n)
 {
 stack_t *list;
 list = NULL;
@@ -32,7 +32,7 @@ fclose(info.file);
 free(info.content);
 free(stack);
 exit(0);
-return (stack);
+
 }
 /**
 * add_end - add node at the end of d_list
