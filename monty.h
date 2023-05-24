@@ -63,8 +63,8 @@ void sq_queue(stack_t **stack, unsigned int counter);
 
 
 void free_stack(stack_t *stack);
-void *add_start(stack_t **head, int n);
-void *add_end(stack_t **head, int n);
-void *pop_end(stack_t **stack, unsigned int counter);
-void *pop_start(stack_t **stack, unsigned int counter);
+void add_start(stack_t **head, int n);
+void add_end(stack_t **head, int n);
+void pop_end(stack_t **stack);
+void pop_start(stack_t **stack);
 #endif

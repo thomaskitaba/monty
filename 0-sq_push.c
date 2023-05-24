@@ -7,9 +7,7 @@
 */
 void sq_push(stack_t **head, unsigned int counter)
 {
-    stack_t *current;
-    current = *head;
-    int i;
+    size_t i;
 
     i = 0;
     if (head == NULL)
