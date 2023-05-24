@@ -42,6 +42,7 @@ while (read_line != -1)
         fprintf(stderr, "Error: error while reading file\n");
         free(content);
         fclose(file);
+        free_stack(*stack);
         exit(EXIT_FAILURE);
     }
     l_count++;
