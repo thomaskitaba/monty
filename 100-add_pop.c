@@ -27,7 +27,7 @@ if (head != NULL)
 {
 	(*head)->prev = list;
 }
-stack = *head = list;
+stack = list;
 return (stack);
 }
 /**
