@@ -17,6 +17,7 @@ typedef struct stack_s{
 	struct stack_s *next;
 	struct stack_s *prev;
 }stack_t;
+extern stack_t *stack;
 /**
  * info_s - holdes info necessory for monty opcode interpreter
  * @content: content of a line in monty file
