@@ -28,10 +28,6 @@ if (*head != NULL)
 	(*head)->prev = list;
 }
 stack = list;
-fclose(info.file);
-free(info.content);
-free_stack(stack);
-exit(0);
 
 }
 /**
