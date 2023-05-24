@@ -5,7 +5,7 @@
 * @counter: line number of the code
 * Return: nothing
 */
-void sq_div(stack_t **stack, unsigned int counter)
+void sq_div(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int counter)
 {
     return;
 }
