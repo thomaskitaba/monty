@@ -22,7 +22,8 @@ if (list == NULL)
 }
 
 stack = list;
-free(list);
+fclose(info.file);
+free(info.content);
 free_stack(stack);
 exit(0);
 return (0);
