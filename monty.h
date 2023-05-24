@@ -60,8 +60,6 @@ extern bus_t bus;
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO Holberton project
  */
-
-
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);
