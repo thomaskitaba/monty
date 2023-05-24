@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 #include <string.h>
-
+#define _POSIX_C_SOURCE 200809L
 /**
  * stack_s - double linked list
  * @n: value in list
