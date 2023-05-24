@@ -21,7 +21,7 @@ if (list == NULL)
 	exit(EXIT_FAILURE);
 }
 
-free(*head);
+free(list);
 return (0);
 }
 /**
