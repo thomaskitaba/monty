@@ -91,7 +91,7 @@ void pop_start(stack_t **head)
 * @n: number to be inserted
 * Return: inserted node address, or NUll
 */
-void pop_end(stack_t **head)
+void pop_end(__attribute__((unused)) stack_t **head)
 {
-	return (*head);
+	return;
 }

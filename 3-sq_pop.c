@@ -7,9 +7,6 @@
 */
 void sq_pop(stack_t **head, __attribute__((unused)) unsigned int counter)
 {
-    stack_t *current;
-    current = *head;
-
     if (*head == NULL)
     {
         fprintf(stderr, "L<%u>: can't pop an empty stack\n", counter);
@@ -20,7 +17,7 @@ void sq_pop(stack_t **head, __attribute__((unused)) unsigned int counter)
     }
     if (info.ord_type == 0)
     {
-        pop_start(&stack, counter);
+        pop_start(&stack);
     }
     else
         /*pop_end(stack, counter);*/

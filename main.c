@@ -12,7 +12,7 @@ int main (int argc, char *argv[])
 FILE *file;
 char *content;
 size_t len;
-size_t read_line;
+int read_line;
 unsigned int l_count;
 content = NULL;
 read_line = 0;
@@ -33,7 +33,7 @@ if (file == NULL)
 while (read_line != -1)
 {
     content = NULL;
-    read_line = getline(&content, &len, file);
+    read_line = (int)getline(&content, &len, file);
     if (ferror(file))
     {
         fprintf(stderr, "Error: error while reading file\n");
