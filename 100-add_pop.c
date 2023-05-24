@@ -7,6 +7,20 @@
 */
 stack_t *add_start(stack_t **head, int n)
 {
+stack_t *list;
+list = NULL;
+
+list = (stack_t *)malloc(sizeof(stack_t));
+
+if (list == NULL)
+{
+	fprintf(stderr, "Error: malloc failed\n");
+	fclose(info.file);
+	free(info.content);
+	free_stack(*head);
+	exit(EXIT_FAILURE);
+}
+
 
 return (*head);
 }
