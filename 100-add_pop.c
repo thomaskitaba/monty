@@ -9,7 +9,7 @@ stack_t *add_start(stack_t **head, int n)
 {
 stack_t *list;
 list = NULL;
-stack = head;
+stack = *head;
 list = (stack_t *)malloc(sizeof(stack_t));
 
 if (list == NULL)
