@@ -21,7 +21,7 @@ void sq_push(stack_t **stack, unsigned int counter)
     if (info.ord_type == 0)
     {
         current = add_start(stack, atoi(info.arg));
-        sq_pall();
+        sq_pall(current, counter);
         free(current);
     }
     else
