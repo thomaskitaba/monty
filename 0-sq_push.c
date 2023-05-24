@@ -10,7 +10,7 @@ void sq_push(stack_t **head, unsigned int counter)
     stack_t *current;
     current = *head;
     printf("sq_push funciton goes here\n");
-    if (stack == NULL)
+    if (head == NULL)
     {
         fprintf(stderr, "Invaled argument passed");
         fclose(info.file);

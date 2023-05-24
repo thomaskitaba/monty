@@ -7,7 +7,7 @@
  * @file: file pointer
  * Return: 1 on error, on success 0
  */
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
+int execute(char *content, stack_t **head, unsigned int counter, FILE *file)
 {
 	char *op, *arg;
 	unsigned int i, j, flag;
@@ -47,7 +47,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 			{
 				fprintf(stderr, "L<%u>: usage: push integer\n", counter);
 				free(content);
-				free_stack(*stack);
+				free_stack(*head);
 				fclose(file);
 				exit(EXIT_FAILURE);
 			}
@@ -61,7 +61,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	{
 		if (strcmp(op, opcode[j].op) == 0)
 		{
-			opcode[j].func(stack, counter);
+			opcode[j].func(head, counter);
 			return (0);
 		}
 		j++;
@@ -70,7 +70,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	{
 		fprintf(stderr, "L<%u>: unknown instruction <%s>\n", counter, op);
 		free(content);
-		free_stack(*stack);
+		free_stack(*head);
 		fclose(file);
 		exit(EXIT_FAILURE);
 	}
