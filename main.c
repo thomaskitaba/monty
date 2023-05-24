@@ -40,6 +40,7 @@ while (read_line != -1)
     if (ferror(file))
     {
         fprintf(stderr, "Error: error while reading file\n");
+        free(content);
         exit(EXIT_FAILURE);
     }
     l_count++;
