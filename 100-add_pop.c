@@ -1,16 +1,35 @@
 #include "monty.h"
 /**
-* add_end - add node at the end of d_list
+* add_start - add node at the end of d_list
 * @head: head of the doublec
 * @n: number to be inserted
 * Return: inserted node address, or NUll
 */
 stack_t *add_start(stack_t **head, int n)
 {
+stack_t *list;
+list = NULL;
 
-	return (*head);
+list = (stack_t *)malloc(sizeof(stack_t));
+
+if (list == NULL)
+{
+	fprintf(stderr, "Error: malloc failed\n");
+	fclose(file);
+	free(info.content);
+	free_stack(*stack);
+	exit(EXIT_FAILURE);
 }
-
+	list->n = n;
+	list->prev = NULL;
+	list->next = *head;
+if (head != NULL)
+{
+	(*head)->prev = list;
+}
+*head = list;
+return (*head);
+}
 /**
 * add_end - add node at the end of d_list
 * @head: head of the doublec
@@ -19,9 +38,40 @@ stack_t *add_start(stack_t **head, int n)
 */
 stack_t *add_end(stack_t **head, int n)
 {
+stack_t *current, *Next, *list;
+current = Next = *head;
+list = NULL;
 
+list = (stack_t *)malloc(sizeof(stack_t));
+if (list == NULL)
+{
+	fprintf(stderr, "Error: malloc failed\n");
+	fclose(file);
+	free(info.content);
+	free_stack(*stack);
+	exit(EXIT_FAILURE);
+}
+list->n = n;
+/*handle empty head*/
+if (*head == NULL)
+{
+	list->prev = NULL;
+	list->next = NULL;
+	*head = list;
 	return (*head);
 }
+/*go to the end of the node*/
+while (Next)
+{
+	current = Next;
+	Next = Next->next;
+}
+	current->next = list;
+	list->prev = current;
+	list->next = NULL;
+	return (*head);
+}
+
 /**
 * pop_start - delete the top node at the begning
 * @head: head of the double linked list
@@ -30,7 +80,6 @@ stack_t *add_end(stack_t **head, int n)
 */
 stack_t *pop_start(stack_t **head, unsigned int n)
 {
-
 	return (*head);
 }
 /**
@@ -41,6 +90,5 @@ stack_t *pop_start(stack_t **head, unsigned int n)
 */
 stack_t *pop_end(stack_t **head, unsigned int n)
 {
-
-    return (*head);
+	return (*head);
 }
