@@ -52,13 +52,7 @@ typedef struct bus_s
 	int lifi;
 }  bus_t;
 extern bus_t bus;
-/**
- * structures - functions for monty opcode
- * @opcode: operation code
- * @f: pointer to a function that handles an opcode
- *
- * Description: funcions for each monty opcode
- */
+
 void f_push(stack_t **head, unsigned int number);
 void f_pall(stack_t **head, unsigned int number);
 void f_pint(stack_t **head, unsigned int number);
