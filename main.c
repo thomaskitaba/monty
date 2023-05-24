@@ -14,13 +14,9 @@ char *content;
 size_t len;
 ssize_t read_line;
 unsigned int l_count;
-stack_t *head;
-
-head = NULL;
 content = NULL;
 read_line = 0;
 l_count = 0;
-
 if (argc != 2)
 {
     fprintf(stderr, "USAGE: monty file\n");
@@ -53,8 +49,7 @@ while (read_line != -1)
     /*printf("size of \tlen = %lu\tread: %ld\n", len, read_line);*/
     free(content);
 }
-head = stack;
-free_stack(head);
+free_stack(stack);
 fclose(file);
 return (0);
 }

@@ -20,10 +20,15 @@ if (list == NULL)
 	free_stack(*head);
 	exit(EXIT_FAILURE);
 }
-
-stack = list;
-
-return (0);
+	list->n = n;
+	list->prev = NULL;
+	list->next = *head;
+if (head != NULL)
+{
+	(*head)->prev = list;
+}
+stack = *head = list;
+return (stack);
 }
 /**
 * add_end - add node at the end of d_list
