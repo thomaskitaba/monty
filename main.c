@@ -13,8 +13,10 @@ int main(int argc, char *argv[])
 	char *content;
 	unsigned int counter;
 	FILE *file;
-	size_t size = 0;
-	ssize_t read_line = 1;
+	size_t size;
+	ssize_t read_line;
+	size = 0;
+	read_line = 1;
 	counter = 0;
 	stack = NULL;
 	if (argc != 2)
