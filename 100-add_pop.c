@@ -82,6 +82,7 @@ void *pop_start(stack_t **head, unsigned int n)
 	stack_t *current;
 	current = *head;
 	stack = current->next;
+	stack->prev = NULL;
 	free(current);
 }
 /**
