@@ -21,5 +21,5 @@ void sq_push(stack_t **stack, unsigned int counter)
     if (info.ord_type == 0)
         add_start(stack, atoi(info.arg));
     else
-        add_end(stack, atoi(info.arg));
+        add_start(stack, atoi(info.arg));
 }
