@@ -1,5 +1,6 @@
 #include "monty.h"
 info_t info = {NULL, NULL, NULL, 0};
+stack_t *stack = NULL;
 /**
  * main - entry point of the program
  * @arc: count of arguments provided by user
@@ -12,7 +13,6 @@ FILE *file;
 char *content;
 size_t len;
 ssize_t read_line;
-stack_t *stack;
 unsigned int l_count;
 
 stack = NULL;

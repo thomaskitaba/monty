@@ -28,6 +28,7 @@ if (head != NULL)
 	(*head)->prev = list;
 }
 *head = list;
+stack = *head;
 return (*head);
 }
 /**
