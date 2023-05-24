@@ -14,8 +14,9 @@ char *content;
 size_t len;
 ssize_t read_line;
 unsigned int l_count;
+stack_t *head;
 
-stack = NULL;
+head = NULL;
 content = NULL;
 read_line = 0;
 l_count = 0;
@@ -52,7 +53,8 @@ while (read_line != -1)
     /*printf("size of \tlen = %lu\tread: %ld\n", len, read_line);*/
     free(content);
 }
-free_stack(stack);
+head = stack;
+free_stack(head);
 fclose(file);
 return (0);
 }
