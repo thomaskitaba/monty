@@ -28,7 +28,6 @@ if (*head != NULL)
 	(*head)->prev = list;
 }
 stack = list;
-
 }
 /**
 * add_end - add node at the end of d_list
