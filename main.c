@@ -11,12 +11,13 @@ int main(int argc, char *argv[])
 {
 	stack_t *stack;
 	char *content;
+    unsigned int counter;
 	FILE *file;
 	size_t size = 0;
 	ssize_t read_line = 1;
-	unsigned int counter = 0;
+	counter = 0;
     stack = NULL;
-	if (argc != 2)
+    if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
