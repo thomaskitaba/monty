@@ -4,4 +4,4 @@ push 1
 push -221
 pall
 pop
-                     apint 6
+pint 6
