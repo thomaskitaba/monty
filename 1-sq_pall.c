@@ -5,15 +5,15 @@
 * @counter: line number of the code
 * Return: nothing
 */
-void sq_pall(stack_t **stack, unsigned int counter)
+void sq_pall(stack_t **head, unsigned int counter)
 {
-stack_t *current;
+    stack_t *current;
     current = NULL;
     printf("sq_pall funciton goes here\n");
     /*TODO: check if stack and *stack == NULL*/
-    if (*stack && stack)
+    if (*head && head)
     {
-        current = *stack;
+        current = *head;
         while(current)
         {
             printf("%d\n", current->n);
@@ -25,7 +25,7 @@ stack_t *current;
         fprintf(stderr, "L<%u>: can't pint, stack empty\n", counter);
         free(info.content);
         fclose(info.file);
-        free_stack(stack);
+        free_stack(*head);
         exit(EXIT_FAILURE);
     }
 }
