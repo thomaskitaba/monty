@@ -28,7 +28,9 @@ if (head != NULL)
 	(*head)->prev = list;
 }
 stack = list;
-free(list);
+fclose(info.file);
+	free(info.content);
+free_stack(stack);
 return (stack);
 }
 /**
