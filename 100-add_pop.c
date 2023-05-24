@@ -79,7 +79,11 @@ while (Next)
 */
 void *pop_start(stack_t **head, unsigned int n)
 {
-	return (*head);
+	stack_t *current;
+	current = current->next;
+	current->prev = NULL;
+	*head = current;
+	stack = current;
 }
 /**
 * pop_end - delete last node at the end of d_list
