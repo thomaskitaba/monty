@@ -85,7 +85,7 @@ void *pop_start(stack_t **head, unsigned int n)
 	current = current->next;
 	current->prev = NULL;
 	*head = current;
-	stack = current;
+	stack = (*head)->next;
 }
 /**
 * pop_end - delete last node at the end of d_list
