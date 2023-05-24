@@ -23,7 +23,7 @@ if (list == NULL)
 	list->n = n;
 	list->prev = NULL;
 	list->next = *head;
-if (head != NULL)
+if (*head != NULL)
 {
 	(*head)->prev = list;
 }
