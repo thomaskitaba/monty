@@ -2,7 +2,7 @@
 /**
  * addnode - function that adds to stack
  * @head: pointer to head of stack
- * @counter: line_number of command on monty file
+ * @n: line_number of command on monty file
  * Return: nothing
 */
 void addnode(stack_t **head, int n)
