@@ -1,7 +1,0 @@
-push -21
-push 33
-push 672
-pall
-pop
-pall
-dpint

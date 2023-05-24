@@ -1,62 +1,52 @@
 #include "monty.h"
 /**
- * execute - find the desired opcode and call the related funciton
- * @content: a single line in the monty file
- * @stack: pointer to
- * @counter: line of monty file being executed
- * @file: file pointer
- * Return: 1 on error, on success 0
- */
-int execute(char *content, stack_t **head, unsigned int counter, FILE *file)
+* execute - executes the opcode
+* @stack: head linked list - stack
+* @counter: line_counter
+* @file: poiner to monty file
+* @content: line content
+* Return: no return
+*/
+int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
-	char *op, *arg;
-	unsigned int j, flag;
+	instruction_t opst[] = {
+				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
+				{"pop", f_pop},
+				{"swap", f_swap},
+				{"add", f_add},
+				{"nop", f_nop},
+				{"sub", f_sub},
+				{"div", f_div},
+				{"mul", f_mul},
+				{"mod", f_mod},
+				{"pchar", f_pchar},
+				{"pstr", f_pstr},
+				{"rotl", f_rotl},
+				{"rotr", f_rotr},
+				{"queue", f_queue},
+				{"stack", f_stack},
+				{NULL, NULL}
+				};
+	unsigned int i = 0;
+	char *op;
 
-	op_optn opcode[] = {{"push", sq_push},
-					{"pall", sq_pall},
-					{"pint", sq_pint},
-					{"pop", sq_pop},
-					{"swap", sq_swap},
-					{"add", sq_add},
-                    {"nop", sq_nop},
-					{"sub", sq_sub},
-					{"div", sq_div},
-					{"mul", sq_mul},
-					{"mod", sq_mod},
-                    {"pchar", sq_pchar},
-					{"pstr", sq_pstr},
-					{"rotl", sq_rotr},
-					{"rotr", sq_swap},
-                    {"stack", sq_rotr},
-					{"queue", sq_swap},
-                    {NULL, NULL}};
-    op = arg = NULL;
-	j = flag = 0;
-	/*tokenize content using strtok*/
 	op = strtok(content, " \n\t");
 	if (op && op[0] == '#')
 		return (0);
-	info.arg  = strtok(NULL, " \n\t");
-	/*check  if argument is number*/
-
-	/* find the appropriate operation code*/
-	while (opcode[j].op && op)
+	bus.arg = strtok(NULL, " \n\t");
+	while (opst[i].opcode && op)
 	{
-		if (strcmp(op, opcode[j].op) == 0)
-		{
-			opcode[j].func(head, counter);
+		if (strcmp(op, opst[i].opcode) == 0)
+		{	opst[i].f(stack, counter);
 			return (0);
 		}
-		j++;
+		i++;
 	}
-	if (op && opcode[j].op == NULL)
-	{
-		fprintf(stderr, "L<%u>: unknown instruction <%s>\n", counter, op);
-		free(content);
-		free_stack(*head);
+	if (op && opst[i].opcode == NULL)
+	{ fprintf(stderr, "L[%d]", counter);
 		fclose(file);
-		exit(EXIT_FAILURE);
-	}
-	printf("line %u  :- %s\n", counter, content);
+		free(content);
+		free_stack(*stack);
+		exit(EXIT_FAILURE); }
 	return (1);
 }

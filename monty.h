@@ -7,67 +7,83 @@
 #include <fcntl.h>
 #include <string.h>
 #include <ctype.h>
-#define _POSIX_C_SOURCE 200809L
+
+
 /**
- * stack_s - double linked list
- * @n: value in list
- * @next: pointer to next node
- * @prev: pointer to previous node
- * Desription: structure that defines stack or queue
+ * struct stack_s - doubly linked list representation of a stack (or queue)
+ * @n: integer
+ * @prev: points to the previous element of the stack (or queue)
+ * @next: points to the next element of the stack (or queue)
+ *
+ * Description: doubly linked list node structure
+ * for stack, queues, LIFO, FIFO Holberton project
  */
-typedef struct stack_s{
+typedef struct stack_s
+{
 	int n;
-	struct stack_s *next;
 	struct stack_s *prev;
-}stack_t;
-extern stack_t *stack;
+	struct stack_s *next;
+} stack_t;
+
 /**
- * info_s - holdes info necessory for monty opcode interpreter
- * @content: content of a line in monty file
- * @arg: argument part of monty opecode
- * @fp: pointer to a monty file
- * @ll_type: change between stack <-> queue
+ * struct instruction_t - contains insturnctions
+ * @stack: value
+ * @counter: pointer to monty file
+ * Description: holds opcode name and its related funtion
  */
-typedef struct info_s{
-	char *content;
+typedef struct instruction_t{
+
+		char *opcode;
+        void (*f)(stack_t **stack, unsigned int counter);
+}instruction_t;
+/**
+ * struct bus_s - variables -args, file, line contentfd
+ * @arg: value
+ * @file: pointer to monty file
+ * @content: line content
+ * @lifi: flag change stack <-> queue
+ * Description: carries values through the program
+ */
+typedef struct bus_s
+{
 	char *arg;
 	FILE *file;
-	int ord_type;
-}info_t;
-extern info_t info;
-
-
-typedef struct opcode{
-	char *op;
-	void (*func)(stack_t **stack, unsigned int counter);
-}op_optn;
+	char *content;
+	int lifi;
+}  bus_t;
+extern bus_t bus;
 /**
+ * struct instruction_s - opcode and its function
+ * @opcode: the opcode
+ * @f: function to handle the opcode
  *
- *
+ * Description: opcode and its function
+ * for stack, queues, LIFO, FIFO Holberton project
  */
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
-void sq_push(stack_t **stack, unsigned int counter);
-void sq_pall(stack_t **stack, unsigned int counter);
-void sq_pint(stack_t **stack, unsigned int counter);
-void sq_pop(stack_t **stack, unsigned int counter);
-void sq_swap(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int counter);
-void sq_add(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int counter);
-void sq_nop(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int counter);
-void sq_sub(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int counter);
-void sq_div(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int counter);
-void sq_mul(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int counter);
-void sq_mod(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int counter);
-void sq_pchar(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int counter);
-void sq_pstr(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int counter);
-void sq_rotl(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int counter);
-void sq_rotr(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int counter);
-void sq_stack(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int counter);
-void sq_queue(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int counter);
 
 
-void free_stack(stack_t *stack);
-void add_start(stack_t **head, int n);
-void add_end(stack_t **head, int n);
-void pop_end(stack_t **stack);
-void pop_start(stack_t **stack);
+char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
+ssize_t getstdin(char **lineptr, int file);
+char  *clean_line(char *content);
+void f_push(stack_t **head, unsigned int number);
+void f_pall(stack_t **head, unsigned int number);
+void f_pint(stack_t **head, unsigned int number);
+int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
+void free_stack(stack_t *head);
+void f_pop(stack_t **head, unsigned int counter);
+void f_swap(stack_t **head, unsigned int counter);
+void f_add(stack_t **head, unsigned int counter);
+void f_nop(stack_t **head, unsigned int counter);
+void f_sub(stack_t **head, unsigned int counter);
+void f_div(stack_t **head, unsigned int counter);
+void f_mul(stack_t **head, unsigned int counter);
+void f_mod(stack_t **head, unsigned int counter);
+void f_pchar(stack_t **head, unsigned int counter);
+void f_pstr(stack_t **head, unsigned int counter);
+void f_rotl(stack_t **head, unsigned int counter);
+void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
+void addnode(stack_t **head, int n);
+void addqueue(stack_t **head, int n);
+void f_queue(stack_t **head, unsigned int counter);
+void f_stack(stack_t **head, unsigned int counter);
 #endif

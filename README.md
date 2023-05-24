@@ -1,1 +1,1 @@
-# 0x19_stack_queue
+0x19. C - Stacks, Queues - LIFO, FIFO
