@@ -80,7 +80,7 @@ while (Next)
 void *pop_start(stack_t **head, unsigned int n)
 {
 	stack_t *current;
-	current = NULL;
+	current = *head;
 
 	current = current->next;
 	current->prev = NULL;

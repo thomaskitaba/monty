@@ -10,7 +10,7 @@ void sq_pop(stack_t **head, unsigned int counter)
     stack_t *current;
     current = *head;
 
-    if (*head == NULL || head == NULL)
+    if (*head == NULL)
     {
         fprintf(stderr, "L<%u>: can't pop an empty stack\n", counter);
         fclose(info.file);
@@ -20,8 +20,7 @@ void sq_pop(stack_t **head, unsigned int counter)
     }
     if (info.ord_type == 0)
     {
-        pop_start(head, counter);
-        printf("ord_type = 0: meaning stack");
+        pop_start(&stack, counter);
     }
     else
         /*pop_end(stack, counter);*/
