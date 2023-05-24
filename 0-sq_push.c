@@ -19,7 +19,9 @@ void sq_push(stack_t **stack, unsigned int counter)
         exit(EXIT_FAILURE);
     }
     if (info.ord_type == 0)
-        add_start(stack, atoi(info.arg));
+        current = add_start(stack, atoi(info.arg));
+        sq_pall();
+        free(current);
     else
-        add_start(stack, atoi(info.arg));
+        printf("hello thomas kitaba");
 }
