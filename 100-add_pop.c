@@ -20,13 +20,7 @@ if (list == NULL)
 	free_stack(*head);
 	exit(EXIT_FAILURE);
 }
-	list->n = n;
-	list->prev = NULL;
-	list->next = *head;
-if (head != NULL)
-{
-	(*head)->prev = list;
-}
+
 stack = list;
 return (stack);
 }
