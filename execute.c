@@ -38,24 +38,6 @@ int execute(char *content, stack_t **head, unsigned int counter, FILE *file)
 		return (0);
 	info.arg  = strtok(NULL, " \n\t");
 	/*check  if argument is number*/
-	if (info.arg)
-	{
-		if (info.arg[i] == '-')
-			i++;
-		for (; i < strlen(info.arg); i++)
-		{
-			if (info.arg[i] < 48 || info.arg[i] > 57)
-			{
-				fprintf(stderr, "L<%u>: usage: push integer\n", counter);
-				free(content);
-				free_stack(*head);
-				fclose(file);
-				exit(EXIT_FAILURE);
-			}
-		}
-	}
-	else
-		info.arg = NULL;
 
 	/* find the appropriate operation code*/
 	while (opcode[j].op && op)

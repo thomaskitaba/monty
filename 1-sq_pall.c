@@ -9,7 +9,7 @@ void sq_pall(stack_t **head, unsigned int counter)
 {
     stack_t *current;
     current = NULL;
-    printf("sq_pall funciton goes here\n");
+
     /*TODO: check if stack and *stack == NULL*/
     if (*head && head)
     {
