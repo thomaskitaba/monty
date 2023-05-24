@@ -23,8 +23,9 @@ stack_t *current;
     else
     {
         fprintf(stderr, "L<%u>: can't pint, stack empty\n", counter);
-        free(content);
-        fclose(file);
+        free(info.content);
+        fclose(info.file);
+        free_stack(stack);
         exit(EXIT_FAILURE);
     }
 }
