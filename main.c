@@ -9,7 +9,7 @@ bus_t bus = {NULL, NULL, NULL, 0};
 */
 int main(int argc, char *argv[])
 {
-	stack_t *stack;
+	Extern stack_t *stack;
 	char *content;
 	FILE *file;
 	size_t size = 0;
