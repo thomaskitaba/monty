@@ -13,7 +13,7 @@ int main (int argc, char *argv[])
     FILE *file;
     char *content;
     size_t len;
-    int read_line;
+    int read_line, fd;
     unsigned int l_count;
     content = NULL;
     read_line = 0;
@@ -23,8 +23,14 @@ int main (int argc, char *argv[])
         fprintf(stderr, "USAGE: monty file\n");
         exit(EXIT_FAILURE);
     }
-    file = fopen(argv[1], "r");
-    info.file = file;
+    fd = open(argv[1], O_RDONLY);
+    if (fd == -1) {
+        perror("Failed to open file");
+        return 1;
+    }
+
+    // Assign the file descriptor to bus.file
+    bus.file = fd;
     if (file == NULL)
     {
         fprintf(stderr, "Error: Can't open file <%s>\n", argv[1]);
