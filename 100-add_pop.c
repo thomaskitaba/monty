@@ -30,7 +30,7 @@ if (*head != NULL)
 stack = list;
 fclose(info.file);
 free(info.content);
-free(stack);
+free_stack(stack);
 exit(0);
 
 }
