@@ -1,9 +1,9 @@
 #include "monty.h"
 /**
- * f_mod - function that computes modulus of 2 elements
- * @head: pointer to head of stack
- * @counter: line_number of command on monty file
- * Return: nothing
+* sp_mod - modulus of top two elements of the stack
+* @head: head of the stack
+* @counter: line number of the code
+* Return: nothing
 */
 void sp_mod(stack_t **head, unsigned int counter)
 {

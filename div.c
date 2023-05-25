@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
- * f_div - function that divides elements of the top stack.
- * @head: pointer to head of stack
- * @counter: line_number of command on monty file
+ * sp_div - divide top element of the stack
+ * @head: stack head pointer
+ * @counter: counter
  * Return: nothing
 */
 void sp_div(stack_t **head, unsigned int counter)

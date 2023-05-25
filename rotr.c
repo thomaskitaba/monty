@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
-  *f_rotr- function that rotates top to bottom
- * @head: pointer to head of stack
- * @counter: line_number of command on monty file
- * Return: nothing
- */
+* sp_rotr - rotates the stack to the bottom.
+* @head: head of the stack
+* @counter: line number of the code
+* Return: nothing
+*/
 void sp_rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
 {
 	stack_t *copy;

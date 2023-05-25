@@ -10,13 +10,11 @@
 #include <ctype.h>
 
 /**
- * struct stack_s - doubly linked list representation of a stack (or queue)
- * @n: integer
- * @prev: points to the previous element of the stack (or queue)
- * @next: points to the next element of the stack (or queue)
- *
- * Description: doubly linked list node structure
- * for stack, queues, LIFO, FIFO Holberton project
+ * stack_s - double linked list
+ * @n: value in list
+ * @next: pointer to next node
+ * @prev: pointer to previous node
+ * Desription: structure that defines stack or queue
  */
 typedef struct stack_s
 {
@@ -26,7 +24,7 @@ typedef struct stack_s
 } stack_t;
 
 /**
- * struct instruction_t - contains insturnctions
+ * struct instruction_t - contains command and related function
  * @opcode: operation code
  * @f: function pointer to monty opcodes
  * Description: holds opcode name and its related funtion
@@ -37,12 +35,11 @@ typedef struct instruction_t
 	void (*f)(stack_t **stack, unsigned int counter);
 } instruction_t;
 /**
- * struct bus_s - variables -args, file, line contentfd
- * @arg: value
- * @file: pointer to monty file
- * @content: line content
- * @lifi: flag change stack <-> queue
- * Description: carries values through the program
+ * bus_s - holdes info necessory for monty opcode interpreter
+ * @content: command on specific line of monty file
+ * @arg: argument part of monty opecode
+ * @fp: pointer to a monty file
+ * @lifi: change order of linked list between stack and queue
  */
 typedef struct bus_s
 {

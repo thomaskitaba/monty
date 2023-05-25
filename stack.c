@@ -1,9 +1,9 @@
 #include "monty.h"
 /**
- * f_stack - function that changes mode of stack to FILO
- * @head: pointer to head of stack
- * @counter: line_number of command on monty file
- * Return: nothing
+* sp_stack - change the mode to stack
+* @head: head of the stack
+* @counter: line number of the code
+* Return: nothing
 */
 void sp_stack(stack_t **head, unsigned int counter)
 {

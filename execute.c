@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
-* execute - function that executes function pointers.
-* @stack: pointer to a stack
-* @counter: line_number of command on monty file
-* @file: funcition of command of monty file
-* @content: content of the read line - a single line
-* Return: nothing
+ * execute - find the desired opcode and call the related funciton
+ * @content: a single line in the monty file
+ * @stack: pointer to
+ * @counter: line of monty file being executed
+ * @file: file pointer
+ * Return: 1 on error, on success 0
 */
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {

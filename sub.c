@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
-  *f_sub- function that that substiturs 2 element of a stack
- * @head: pointer to head of stack
- * @counter: line_number of command on monty file
- * Return: nothing
- */
+* sp_sub - subtract  the top two elements of the stack
+* @head: head of the stack
+* @counter: line number of the code
+* Return: nothing
+*/
 void sp_sub(stack_t **head, unsigned int counter)
 {
 	stack_t *aux;

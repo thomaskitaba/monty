@@ -1,9 +1,9 @@
 #include "monty.h"
 /**
- * f_queue - prints the top
- * @head: pointer to head of stack
- * @counter: line_number of command on monty file
- * Return: nothing
+* sp_queue- change the mode to stack
+* @head: head of the stack
+* @counter: line number of the code
+* Return: nothing
 */
 void sp_queue(stack_t **head, unsigned int counter)
 {

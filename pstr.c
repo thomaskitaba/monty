@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
- * f_pstr - prints the string starting at the top of the stack,
- * followed by a new
- * @head: pointer to head of stack
- * @counter: line_number of command on monty file
- * Return: nothing
+/**
+* sp_pstr - prints the string starting at the top of the stack
+* @head: head of the stack
+* @counter: line number of the code
+* Return: nothing
 */
 void sp_pstr(stack_t **head, unsigned int counter)
 {
