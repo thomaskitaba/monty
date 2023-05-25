@@ -11,6 +11,14 @@ void sp_sub(stack_t **head, unsigned int counter)
 	int sus, nodes;
 
 	aux = *head;
+	if (head == NULL)
+	{
+		fprintf(stderr, "L%d: can't sub invalic stack\n", counter);
+		fclose(bus.file);
+		free(bus.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
 	for (nodes = 0; aux != NULL; nodes++)
 		aux = aux->next;
 	if (nodes < 2)
