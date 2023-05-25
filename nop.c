@@ -1,6 +1,5 @@
 #include "monty.h"
 /**
-/**
 * sp_nop - do nothing to the stack
 * @head: head of the stack
 * @counter: line number of the code
