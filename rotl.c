@@ -5,7 +5,7 @@
  * @counter: line_number of command on monty file
  * Return: nothing
  */
-void f_rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
+void sp_rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
 {
 	stack_t *tmp = *head, *aux;
 

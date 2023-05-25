@@ -5,7 +5,7 @@
  * @counter: line_number of command on monty file
  * Return: nothing
 */
-void f_pint(stack_t **head, unsigned int counter)
+void sp_pint(stack_t **head, unsigned int counter)
 {
 	if (*head == NULL)
 	{

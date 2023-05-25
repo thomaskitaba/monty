@@ -5,7 +5,7 @@
  * @counter: line_number of command on monty file
  * Return: nothing
  */
-void f_sub(stack_t **head, unsigned int counter)
+void sp_sub(stack_t **head, unsigned int counter)
 {
 	stack_t *aux;
 	int sus, nodes;

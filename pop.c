@@ -5,7 +5,7 @@
  * @counter: line_number of command on monty file
  * Return: nothing
 */
-void f_pop(stack_t **head, unsigned int counter)
+void sp_pop(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 

@@ -6,7 +6,7 @@
  * @counter: line_number of command on monty file
  * Return: nothing
 */
-void f_pstr(stack_t **head, unsigned int counter)
+void sp_pstr(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	(void)counter;

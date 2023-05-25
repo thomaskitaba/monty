@@ -5,7 +5,7 @@
  * @counter: line_number of command on monty file
  * Return: nothing
 */
-void f_mod(stack_t **head, unsigned int counter)
+void sp_mod(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	int len = 0, aux;

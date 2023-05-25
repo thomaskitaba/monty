@@ -5,7 +5,7 @@
  * @counter: line_number of command on monty file
  * Return: nothing
 */
-void f_queue(stack_t **head, unsigned int counter)
+void sp_queue(stack_t **head, unsigned int counter)
 {
 	(void)head;
 	(void)counter;
