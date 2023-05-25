@@ -1,6 +1,5 @@
 #include "monty.h"
 /**
-/**
 * sp_pstr - prints the string starting at the top of the stack
 * @head: head of the stack
 * @counter: line number of the code
