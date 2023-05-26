@@ -7,5 +7,23 @@
 */
 void sq_rotr(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int counter)
 {
-    return;
+	stack_t *current, *Next, *temp;
+
+    Next = temp = current = *stack;
+    if (*stack == NULL || current->next == NULL)
+    {
+        return;
+    }
+    while(Next->next)
+    {
+        current = Next;
+        Next = Next->next;
+    }
+        current->next = NULL;
+
+        Next->prev = NULL;
+        Next->next = temp;
+        temp->prev = Next;
+
+        *stack = Next;
 }
